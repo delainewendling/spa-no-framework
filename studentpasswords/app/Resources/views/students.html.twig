@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <table>
+        <thead>
+            <th> Student Id </th>
+            <th> Username </th>
+            <th> Name </th>
+            <th> Email </th>
+            <th> Password </th>
+            <th> Homeroom </th>
+            <th> Grade </th>
+            <th> School Id </th>
+        </thead>
+    {% for student in students %}
+        <tr>
+            <td> {{ student.id }} </td>
+            <td> {{ student.username }}</td>
+            <td> {{ student.firstName }} {{ student.lastName }}</td>
+            <td> {{ student.email }}</td>
+            <td> {{ student.password }}</td>
+            <td> {{ student.homeroomId }}</td>
+            <td> {{ student.grade }}</td>
+            <td> {{ student.schoolId }}</td>
+        </tr>
+    {% endfor %}
+    </table>
+{% endblock %}
