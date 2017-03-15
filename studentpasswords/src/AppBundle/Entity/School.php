@@ -8,13 +8,16 @@
 
 namespace AppBundle\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
 /**
+ * @ORM\Entity
  * @ORM\Table(name="school")
  * @ORM\HasLifecycleCallbacks()
  **/
 class School
 {
     /**
+     * @ORM\Id
      * @ORM\Column(type="integer", name="school_id")
      **/
     protected $id;
@@ -35,7 +38,7 @@ class School
     protected $districtId;
 
     /**
-     * @ORM\OneToMany(targetEntity="Student", mappedBy="homeroomId", cascade={"persist"})
+     * @ORM\OneToMany(targetEntity="Student", mappedBy="schoolId")
      */
     protected $students;
 

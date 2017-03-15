@@ -1,28 +1,41 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <table>
-        <thead>
-            <th> Student Id </th>
-            <th> Username </th>
-            <th> Name </th>
-            <th> Email </th>
-            <th> Password </th>
-            <th> Homeroom </th>
-            <th> Grade </th>
-            <th> School Id </th>
-        </thead>
-    {% for student in students %}
-        <tr>
-            <td> {{ student.id }} </td>
-            <td> {{ student.username }}</td>
-            <td> {{ student.firstName }} {{ student.lastName }}</td>
-            <td> {{ student.email }}</td>
-            <td> {{ student.password }}</td>
-            <td> {{ student.homeroomId }}</td>
-            <td> {{ student.grade }}</td>
-            <td> {{ student.schoolId }}</td>
-        </tr>
-    {% endfor %}
-    </table>
+
+    <div class="row">
+        <ul class="nav nav-tabs">
+            {% for school in schools %}
+                <li role="presentation" class="school-tab" data-school-id="{{ school.id }}"><a href="#">{{ school.name }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+    {#TODO: make this an include template instead of hard coded here#}
+
+    <div class="studentInfoTable">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <th> Name </th>
+                <th> Email </th>
+                <th> Password </th>
+                <th> Student Id </th>
+                <th> Homeroom </th>
+                <th> Grade </th>
+            </thead>
+            <tbody class="studentTableBody">
+                {% if students is defined %}
+                    {% for student in students %}
+                        <tr>
+                            <td> {{ student.firstName }} {{ student.lastName }}</td>
+                            <td> {{ student.email }}</td>
+                            <td> {{ student.password }}</td>
+                            <td> {{ student.id }} </td>
+                            <td> {{ student.homeroomId.name }}</td>
+                            <td> {{ student.grade }}</td>
+                        </tr>
+                    {% endfor %}
+                {%  endif %}
+            </tbody>
+        </table>
+    </div>
+
 {% endblock %}
