@@ -4,14 +4,11 @@
 
 var commonModule = {
     init: function(settings){
-        //This will be a dictionary. These are the defaults. You can leave the
         commonModule.config = {
         };
-        //extends the function inside the javascript, applies the values in the second argument to the first argument. It merges objects.
         $.extend(commonModule.config, settings);
         commonModule.setup();
     },
-    //add your event listeners
     setup: function(){
 
     },

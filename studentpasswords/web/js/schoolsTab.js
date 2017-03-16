@@ -1,17 +1,16 @@
 var schoolsModule = {
     init: function(settings){
-        //This will be a dictionary. These are the defaults. You can leave the
         schoolsModule.config = {
             tab: '.school-tab',
             table: '.studentInfoTable',
             search: '#search',
             filterEmails: '#filterEmails'
         };
-        //extends the function inside the javascript, applies the values in the second argument to the first argument. It merges objects.
+
         $.extend(schoolsModule.config, settings);
         schoolsModule.setup();
     },
-    //add your event listeners
+
     setup: function(){
         schoolsModule.getStudentInfo(517);
         $(schoolsModule.config.tab).on("click", schoolsModule.tabClicked);
@@ -49,7 +48,7 @@ var schoolsModule = {
             $('.follows').closest('tr').show();
         }
     },
-    //TODO: Cache the data so that you don't have to get it again if the user clicks on it again
+    //TODO: Cache the data so that another ajax call doesn't have to happen if the user clicks on the same tba again
     getStudentInfo: function($schoolId)
     {
         commonModule.post(
