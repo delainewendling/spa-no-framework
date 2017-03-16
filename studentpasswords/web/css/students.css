@@ -1,0 +1,26 @@
+.does-not-follow {
+    background-color: yellow;
+}
+
+.highlight-box {
+    background-color: yellow;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.highlight-bar {
+    margin: 15px;
+}
+
+.search-bar {
+    padding: 20px;
+}
+
+#search {
+    width: 30vw;
+    height: 30px;
+}
+
+.active > a {
+    color: blue;
+}

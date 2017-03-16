@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <div class="row">
+        <article class="pull-right search-bar">
+            <input id="search" placeholder="Search for Student..." >
+        </article>
+    </div>
+    <div class="row">
+        <ul class="nav nav-tabs">
+            {% for school in schools %}
+                <li role="presentation" class="school-tab" data-school-id="{{ school.id }}"><a href="#">{{ school.name }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="row highlight-bar">
+        <div class="highlight-box col-xs-offset-2 col-xs-1"></div>
+        <div style="display: inline;"> Indicates an email that is missing or does not adhere to the formula
+        </div>
+        <input type="checkbox" id="filterEmails" style="display: inline; margin-left: 15px;">
+        <label for="filterEmails" style="display: inline;">Only Abnormal Emails</label>
+    </div>
+    <div>
+        <table class="table table-bordered table-striped studentInfoTable search-table">
+            <thead>
+                <th> First Name </th>
+                <th> Last Name </th>
+                <th> Email </th>
+                <th> Password </th>
+                <th> Student Id </th>
+                <th> Homeroom </th>
+                <th> Grade </th>
+            </thead>
+            <tbody class="studentTableBody">
+
+            </tbody>
+        </table>
+    </div>
+
+
+{% endblock %}
