@@ -18,13 +18,9 @@ class StudentController extends Controller
      */
     public function schoolInfo(Request $request)
     {
-
-        //TODO: join in homeroom and school tables to get the school names, group the students by school
         $schools = $this->getSchoolInfo();
-        $students = $this->getStudentInfo(517);
 
         $context = [
-            'students' => $students,
             'schools' => $schools
         ];
 
