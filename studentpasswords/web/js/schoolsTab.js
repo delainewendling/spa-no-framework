@@ -74,7 +74,7 @@ var schoolsModule = {
         //Apply algorithm to determine if the email follows the formula
         var emailBeginning = student.email.split("@")[0];
         var lastName = emailBeginning.substring(1, emailBeginning.length);
-        return student.lastName.toLowerCase() === lastName ? 'follows' : 'does-not-follow';
+        return student.lastName.toLowerCase() === lastName.toLowerCase() ? 'follows' : 'does-not-follow';
     },
     updateStudentInfo: function(student, emailClass){
         return "<tr><td>" + student.firstName + "</td><td> " + student.lastName + "</td><td class="+emailClass+">" + student.email + "</td><td>" + student.password +"</td><td>" + student.id + "</td><td>" + student.homeroomId.name + "</td><td>" + student.grade + "</td></tr>";
