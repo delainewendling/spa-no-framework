@@ -1,3 +1,3 @@
 ## Single Page Application Without a Framework
 
-This is a playground for me to make a SPA without a JavaScript framework. 
+A student/password table for all RePublic Charter Schools. This allows users to view data, search for a student within the data, switch between schools, and view students with abnormal emails. 
